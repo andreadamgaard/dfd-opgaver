@@ -4,7 +4,8 @@
   .content > * + * {
     margin-top: 0.25rlh;
   }
-
+  /*skrevet ind som nesting under .card
+kan sættes udenfor card, så skal & skiftes til .card*/
   &:not(:has(img, h3)) {
     font-size: 1.25rem;
     line-height: 1.4;
