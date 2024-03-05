@@ -11,6 +11,16 @@ kan sættes udenfor card, så skal & skiftes til .card*/
     line-height: 1.4;
   }
 
+  /*
+  Her har siger vi der skal være enten eller, 
+  så hvis den ikke har img, men h3 vil vi stadigvæk få fat på den? Tjek op.
+  &:not(:has(img, h3)) 
+
+  Her er vi mere specifikke. Den må ikke have hverken h3 eller img.
+  Derfor bliver de skrevet dobbelt.
+  &:not(:has(h3):has(h3)) 
+*/
+
   &:not(:has(img)) {
     h3 {
       font-size: 30px;
