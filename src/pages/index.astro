@@ -19,12 +19,7 @@ import { cardContent } from "../data/card-content.js";
       <section>
         <header>
           <h2>Financial Projections</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </header>
 
         <ScrollingContainer cardContent={cardContent} />
@@ -34,9 +29,28 @@ import { cardContent } from "../data/card-content.js";
 </html>
 
 <style>
+
   main {
     padding-block: 4rem; /* Kun af æstetiske årsager */
   }
   section {
+    --content: min(var(--content-width), 100% - 1rem);
+    display: grid;
+    grid-template-columns: 1fr var(--content) 1fr;
+    padding: min(3rem, 5%);
+    > header {
+      grid-column: 2;
+    }
   }
+
+/* main {
+    padding-block: 4rem; /* Kun af æstetiske årsager */
+    display: grid;
+    grid-template-columns: 1fr minmax(0, var(--content-width)) 1fr;
+    gap: var(--card-gap);
+
+    > * {
+      grid-column: 2;
+    }
+  } */
 </style>
